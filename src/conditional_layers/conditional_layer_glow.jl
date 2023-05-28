@@ -58,9 +58,9 @@ or
 
  See also: [`Conv1x1`](@ref), [`ResidualBlock`](@ref), [`get_params`](@ref), [`clear_grad!`](@ref)
 """
-struct ConditionalLayerGlow{Conv,RB,AF} <: NeuralNetLayer
+struct ConditionalLayerGlow{Conv,R,AF} <: NeuralNetLayer
     C::Conv
-    RB::RB
+    RB::R
     logdet::Bool
     activation::AF
 end
