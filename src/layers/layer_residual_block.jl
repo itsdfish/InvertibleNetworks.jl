@@ -64,16 +64,16 @@ or
 
  See also: [`get_params`](@ref), [`clear_grad!`](@ref)
 """
-struct ResidualBlock <: NeuralNetLayer
-    W1::Parameter
-    W2::Parameter
-    W3::Parameter
-    b1::Parameter
-    b2::Parameter
+struct ResidualBlock{P1,P2,P3,P4,P5,S,PAD,AF} <: NeuralNetLayer
+    W1::P1
+    W2::P2
+    W3::P3
+    b1::P4
+    b2::P5
     fan::Bool
-    strides
-    pad
-    activation::ActivationFunction
+    strides::S
+    pad::PAD
+    activation::AF
 end
 
 @Flux.functor ResidualBlock
