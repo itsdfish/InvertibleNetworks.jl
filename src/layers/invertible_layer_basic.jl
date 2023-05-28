@@ -58,10 +58,10 @@ or
 
  See also: [`ResidualBlock`](@ref), [`get_params`](@ref), [`clear_grad!`](@ref)
 """
-mutable struct CouplingLayerBasic <: NeuralNetLayer
+mutable struct CouplingLayerBasic{AF} <: NeuralNetLayer
     RB::Union{ResidualBlock, FluxBlock}
     logdet::Bool
-    activation::ActivationFunction
+    activation::AF
     is_reversed::Bool
 end
 

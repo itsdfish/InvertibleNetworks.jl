@@ -39,10 +39,10 @@ export ActNorm, reset!
 
  See also: [`get_params`](@ref), [`clear_grad!`](@ref)
 """
-mutable struct ActNorm <: NeuralNetLayer
-    k::Integer
-    s::Parameter
-    b::Parameter
+mutable struct ActNorm{P1,P2,I<:Integer} <: NeuralNetLayer
+    k::I
+    s::P1
+    b::P2
     logdet::Bool
     is_reversed::Bool
 end

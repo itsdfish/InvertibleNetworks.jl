@@ -59,9 +59,9 @@ export NetworkConditionalGlow, NetworkConditionalGlow3D
 
  See also: [`ActNorm`](@ref), [`CouplingLayerGlow!`](@ref), [`get_params`](@ref), [`clear_grad!`](@ref)
 """
-struct NetworkConditionalGlow <: InvertibleNetwork
-    AN::AbstractArray{ActNorm, 2}
-    AN_C::ActNorm
+struct NetworkConditionalGlow{AN} <: InvertibleNetwork
+    AN::AbstractArray{AN, 2}
+    AN_C::AN
     CL::AbstractArray{ConditionalLayerGlow, 2}
     Z_dims::Union{Array{Array, 1}, Nothing}
     L::Int64

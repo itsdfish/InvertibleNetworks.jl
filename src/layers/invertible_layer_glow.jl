@@ -60,8 +60,8 @@ or
 
  See also: [`Conv1x1`](@ref), [`ResidualBlock`](@ref), [`get_params`](@ref), [`clear_grad!`](@ref)
 """
-struct CouplingLayerGlow <: NeuralNetLayer
-    C::Conv1x1
+struct CouplingLayerGlow{Conv<:Conv1x1} <: NeuralNetLayer
+    C::Conv
     RB::Union{ResidualBlock, FluxBlock}
     logdet::Bool
     activation::ActivationFunction

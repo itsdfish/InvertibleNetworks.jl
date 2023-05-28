@@ -9,9 +9,9 @@ export ShuffleLayer, WaveletLayer, HaarLayer
 ###############################################################################
 # Custom type for squeezer functions
 
-struct Squeezer
-    forward::Function
-    inverse::Function
+struct Squeezer{F1,F2}
+    forward::F1
+    inverse::F2
 end
 
 function ShuffleLayer(;pattern="checkerboard")
