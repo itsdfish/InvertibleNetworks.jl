@@ -4,9 +4,9 @@
 
 export Parameter, get_params, get_grads, set_params!, par2vec, vec2par
 
-mutable struct Parameter{T1,T2}
-    data::T1
-    grad::T2
+mutable struct Parameter
+    data
+    grad
 end
 
 convert_data!(::Type{T}, ::Parameter, ::AbstractArray{T, N}) where {T, N} = nothing
