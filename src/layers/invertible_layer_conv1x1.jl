@@ -39,11 +39,11 @@ export Conv1x1
 
  See also: [`get_params`](@ref), [`clear_grad!`](@ref)
 """
-struct Conv1x1{P1,P2,P3,I<:Integer} <: NeuralNetLayer
-    k::I
-    v1::P1
-    v2::P2
-    v3::P3
+struct Conv1x1 <: NeuralNetLayer
+    k::Integer
+    v1::Parameter
+    v2::Parameter
+    v3::Parameter
     logdet::Bool
     freeze::Bool
 end
