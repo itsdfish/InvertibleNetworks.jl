@@ -13,10 +13,10 @@ export ReLUlayer, LeakyReLUlayer, SigmoidLayer, Sigmoid2Layer, GaLUlayer, ExpCla
 ###############################################################################
 # Custom type for activation functions
 
-struct ActivationFunction
-    forward::Function
+struct ActivationFunction{F1,F2}
+    forward::F1
     inverse::Union{Nothing, Function}
-    backward::Function
+    backward::F2
 end
 
 function ReLUlayer()
